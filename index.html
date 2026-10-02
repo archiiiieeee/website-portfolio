@@ -22,6 +22,13 @@
       color: rgb(245, 245, 248);
     }
 
+
+    .dyslexic-mode {
+      font-family: Arial, sans-serif;
+      letter-spacing: 0.08em;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
   </style>
 </head>
 
@@ -33,9 +40,12 @@
     <div class="container">   
     </div>
     <script>
-    $("#nav-placeholder").load("navbar.html #site-nav");
+    $("#nav-placeholder").load("navbar.html #site-nav", function () {
+      $("#dyslexia-toggle").on("click", function () {
+        $("body").toggleClass("dyslexic-mode");
+      });
+    });
     </script>
-
 
     <a href="#main-content" class="visually-hidden-focusable">
   Skip to main content
